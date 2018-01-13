@@ -1,0 +1,41 @@
+<!DOCTYPE	html>
+<html>
+		<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+</script>
+		<style>
+				fieldset	{	border:	0;	}
+				.error-msg{	color:	red;	}
+		</style>
+		<body>
+			<form	ng-app="emailSearch"	name="esForm"	ng-submit="submit()"	ng-
+controller="esController">
+				<fieldset>
+						<label	for="email">Email:</label>
+						<input	id="email"	name="email"	ng-model="email" required
+										ng-pattern="/^[a-zA-Z0-9\!\#\$\%\&\'\*\+\-\/\=\?\^\_\`\
+{\|\}\~\.]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,4}$/"		/>
+						<span	class="error-msg"	ng-show="esForm.email.$dirty	&&
+esForm.email.$invalid">
+								<span	ng-show="esForm.email.$error.required">Email	is	required.
+                </span>
+  								<span	ng-show="esForm.email.$error.pattern">Invalid	email	address.
+  </span>
+  						</span>
+  				</fieldset>
+  				<fieldset>
+  						<button	type="submit"	ng-disabled="esForm.email.$dirty	&&
+  esForm.email.$invalid">Submit</button>
+  				</fieldset>
+  		</form>
+  <script>
+  		"use	strict";
+  		angular.module(	"emailSearch",	[]	).controller(	"esController",	[
+      "$scope",	function	(	$scope	){				$scope.email	=	"";
+    				$scope.submit	=	function()	{
+    						alert(	"Looking	up	for	"	+	$scope.email	);
+              };
+		}]);
+</script>
+		</body>
+</html>
