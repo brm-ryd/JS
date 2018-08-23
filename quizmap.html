@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Quiz Geo Map </title>
+  <meta charset="utf-8">
+  <style>
+  header {font-family:Georgia,"Arial",serif;
+    font-size: 20px;
+    display:block;
+  }
+  video {display: none; position:absolute;
+    top: 60px; right: 20px;
+  }
+  audio {display:none; position:absolute;
+    top:60px; right:20px;
+  }
+  canvas { position: relative;top:60px
+  right: 20px; }
+  #answer {position: relative;
+  font-family: Georgia,"Arial",Times,serif;
+  font-size: 16px;}
+  </style>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=initMap"
+    type="text/javasript"></script>
+
+  <script type="text/javascript"
+    src="mediacontentquiz.js">
+  </script>
+
+  <script type="text/javascript"
+    charset="utf-8">
+
+  var listener;
+  var map;
+  var myOptions;
+  var ctx;
+  var content = [];
+  var answer;
+  var audioel;
+  var v;
+  var blatlng;
+
+  vart videotext1 = "<video id=\"XXXX\"
+  preload=\"auto\" controls=\"controls\"
+  width=\"400\"><source src=\"XXXX.mp4\"
+  type=\'video/mp4; codecs=\"avc1.42E01E,mp4a.40.2\"\'>";
+
+  var videotext2="<source src="XXXX.theora.ogv\"
+  type=\'video/ogg; codecs=\"theora,vorbis\"\'>
+  <source src=\"XXXX.webmvp8.webm\" type=\'video/webm; codec=\"vp8,vorbis\"\'>";
+
+  var videotext3 = "browser does not accept the video tag.</video>";
+
+  var audiotext1= ;
+
+
+</head>
+</body>
+
+</body>
+</html>
