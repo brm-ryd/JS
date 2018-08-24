@@ -52,7 +52,65 @@
 
   var videotext3 = "browser does not accept the video tag.</video>";
 
-  var audiotext1= ;
+  var audiotext1= "<audio id=\"XXXX\" controls=\"controls\"
+  preload=\"preload\"><source src=\"XXXX.ogg\" type=\"audio/ogg\" />";
+
+  var audiotext2 = "<source src=\"XXXX.mp3\" type=\"audio/mpeg\" /> \
+  <source src=\"XXXX.wav\" type=\"audio/wav\" /></audio>";
+
+  var nextquestion = -1;
+
+  function init()
+  {
+    ctx = document.getElementById("canvas").getContext('2d');
+    answer = document.getElementById("answer");
+    header = document.getElementById("header");
+    loadcontent();
+
+    asknewquestion();
+  }
+
+  function asknewquestion()
+  {
+    nextquestion++;
+    if(nextquestion<questions.length) {
+      header.innerHTML = questions[nextquestion];
+    }
+    else {
+      header.innerHTML = "no more questions";
+    }
+  }
+
+  function loadcontent() {
+    var divelement;
+    makemap(base[0],base[1]);
+    var videomarkup;
+    var videoreference;
+    var audiomarkup;
+    var audioreference;
+    var imageobj;
+    var name;
+    var savedimagefilename;
+    for (var i = 0;i<precontent.length;i++) {
+      content.push(precontent[i]);
+      name = precontent[i][4];
+      switch(precontent[i][3]) {
+        case "video":
+          divelement = document.createElement("div");
+          divelement.style = "float:right;width:30%;";
+          videomarkup = videotext1+videotext2+videotext3;
+          videomarkup = videomarkup.replace(/XXXX/g,name);
+          divelement.innerHTML = videomarkup;
+          document.body.appendChild(divelement);
+          videoreference = document.getElementById(name);
+          content[i][4] = videoreference;
+        break;
+        case "pictureaudio":
+          divelement = document.createElement("div");
+          
+      }
+    }
+  }
 
 
 </head>
