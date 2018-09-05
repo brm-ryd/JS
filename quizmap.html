@@ -107,11 +107,85 @@
         break;
         case "pictureaudio":
           divelement = document.createElement("div");
-          
+          divelement.style = "float; \
+          right;width:30%;";
+          audiomarkup = audiotext1 + audiotext2;
+          audiomarkup = audiomarkup.replace(/XXXX/g,name);
+          divelement.innerHTML = audiomarkup;
+          document.body.appendChild(divelement);
+
+          audioreference = document.getElementById(name);
+          savedimagefilename = content[i][5];
+          content[i][5] = audioreference;
+          imageobj = new Image();
+          imageobj.src = savedimagefilename;
+          content[i][4] = imageobj;
+        break;
+        case "picture":
+          imageobj = new Image();
+          imageobj.src = precontent[i][4];
+          content[i][4] = imageobj;
+        break;
       }
     }
   }
+  var rxmarker = "rx1.png";
+  var bxmarker = "bx2.png";
 
+  function makemap(mylat, mylong) {
+    var marker;
+    blatlng = new google.maps.LatLng(mylat, mylong);
+    myOptions = { zoom: zoomlevel, center:blatlng, mapTypeId:google.maps.MapTypeId.ROADMAP };
+    map = new google.maps.Map(document.getElementById("place"),myOptions);
+    marker = new google.maps.Marker({ position: blatlng, title:"center", icon:
+    rxmarker, map: map});
+    listener = google.maps.event.addListener(map, 'click', function(event) {
+      checkit(event.latlng);
+    });
+  }
+
+  function eraseold() {
+    if (v != undefined) {
+      v.pause();
+      v.style.display = "none";
+    }
+    if (audioel != undefined ) {
+      audioel.pause();
+      audioel.style.display = "none";
+    }
+    ctx.clearRect(0,0,300,300);
+  }
+
+  function checkit(clatlng) {
+    var marker;
+    var latlng = new google.maps.LatLng(content[nextquestion][0], \
+      content[nextquestion][1]);
+    var distance = dist(clatlng, latlnga);
+    eraseold();
+
+    var marker = new google.maps.Marker({position: clatlng, \
+      titile:"your answer", icon:bxmarker, map:map});
+
+    if (distance < maxdistance) {
+      switch(content[nextquestion][3]) {
+        case "video":
+          answer.innerHTML = content[nextquestion][2];
+          ctx.clearRect(0,0,400,400);
+          v = content[nextquestion][4];
+          v.style.display = "block";
+          v.currentTime = 0;
+          v.play();
+        break;
+        case "picture":
+
+        case "pictureaudio":
+          answer.innerHTML = content[nextquestion][2];
+          ctx.clearRect(0,0,400,400);
+          var img1 = content[nextquestion][4];
+          var iw = img1.width;
+          var ih = 
+    }
+  }
 
 </head>
 </body>
