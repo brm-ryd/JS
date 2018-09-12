@@ -183,9 +183,64 @@
           ctx.clearRect(0,0,400,400);
           var img1 = content[nextquestion][4];
           var iw = img1.width;
-          var ih = 
+          var ih = img1.height;
+          var aspect = iw/ih;
+          if (iw >= ih) {
+            if (iw > 400) {
+              tw = 400;
+              th = 400/aspect;
+            }
+            else {
+              tw = iw;
+              th = ih;
+            }
+          }
+          else {
+            if (ih>400) {
+              th = 400;
+              tw = 400 * aspect;
+            }
+            else {
+              th = ih;
+              tw = iw;
+            }
+          }
+          ctx.drawImage(img1, 0,0, iw, ih, 0, 0, tw, th);
+          if (content[nextquestion][3] == "picture") {
+            break;
+          }
+          else {
+            audioel = content[nextquestion[5]];
+            audioel.style.display = "block";
+            audioel.currentTime = 0;
+            audioel.play();
+            break;
+          }
     }
+    asknewquestion();
   }
+  else {
+    answer.innerHTML = "not close enough to answer";
+  }
+}
+
+function dist(point1, point2){
+  var R = 6371; //in km
+  // var R = 3959; //in miles
+  var lat1 = point1.lat()*Math.PI/180;
+  var lat2 = point2.lat()*Math.PI/180;
+  var lon1 = point1.lng()*Math.PI/180;
+  var lon2 = point2.lng()*Math.PI/180;
+
+  var d = Math.acos(Math.sin(lat1)*Math.sin(lat2) + Math.cos(lat1)*Math.cos(lat2) \
+    * Math.cos(lon2-lon1)) * R;
+  return d;
+}
+
+function giveup() {
+  makemap(content[nextquestion][0], content[nextquestion][1]);
+  //will erase questions
+}
 
 </head>
 </body>
