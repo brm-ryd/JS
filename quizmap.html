@@ -240,10 +240,21 @@ function dist(point1, point2){
 function giveup() {
   makemap(content[nextquestion][0], content[nextquestion][1]);
   //will erase questions
+  eraseold();
+  answer.innerHTML = "click at red x to finish this question";
 }
-
+</script>
 </head>
-</body>
-
+<body onload="init();">
+  <header id="header">Click</header>
+  <div id="place" style="float: left; width:50%; heigh:400px"></div>
+  <button onclick="giveup();">Hint???</button>
+  <div style="float: right;width:30%;height:400px">
+    <div id="answer">starting location</div>
+    <p> </p>
+    <canvas id="canvas" width="400" height="400" >
+      ">>> browser doesnt recognize <<<"
+    </canvas>
+  </div>
 </body>
 </html>
