@@ -29,7 +29,7 @@
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "15.1.0",
     "eslint-plugin-react": "7.3.0",
-    "extend": "3.0.0",
+    "extend": "3.0.2",
     "file-loader": "0.11.2",
     "gaze": "1.1.2",
     "ncp": "2.0.0",
