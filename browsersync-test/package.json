@@ -3,7 +3,12 @@
   "name": "Header",
   "main": "./Header.js",
   "dependencies": {
+    "acorn": "^6.1.1",
+    "ajv": "^6.10.0",
     "bluebird": "3.5.0",
+    "braces": "^3.0.2",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
     "express": "^4.17.1",
     "moment": "^2.24.0",
     "react": "16.0.0",
@@ -21,7 +26,7 @@
     "babel-preset-stage-0": "6.5.0",
     "css-loader": "^2.1.1",
     "del": "3.0.0",
-    "eslint": "^5.16.0",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "15.1.0",
     "eslint-plugin-react": "7.3.0",
     "extend": "3.0.0",
@@ -32,8 +37,8 @@
     "postcss-loader": "^2.0.6",
     "precss": "^2.0.0",
     "style-loader": "0.18.2",
-    "url-loader": "0.5.9",
-    "webpack": "^4.33.0"
+    "url-loader": "^2.0.0",
+    "webpack": "^3.12.0"
   },
   "eslintConfig": {
     "parser": "babel-eslint",
