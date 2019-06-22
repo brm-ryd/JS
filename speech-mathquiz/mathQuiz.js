@@ -1,4 +1,4 @@
-﻿// startup code
+﻿// start code - contains various languages selections for answering questions
 var langs =
 [['Afrikaans',       ['af-ZA']],
  ['Bahasa Indonesia',['id-ID']],
