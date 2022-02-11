@@ -4,7 +4,7 @@
   "main": "./Header.js",
   "dependencies": {
     "acorn": "^6.1.1",
-    "ajv": "^6.10.0",
+    "ajv": "^6.12.3",
     "bluebird": "3.5.0",
     "braces": "^3.0.2",
     "eslint-plugin-import": "^2.17.3",
