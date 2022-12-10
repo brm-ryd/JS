@@ -9,7 +9,7 @@
     "braces": "^3.0.2",
     "eslint-plugin-import": "^2.17.3",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "moment": "^2.24.0",
     "react": "16.0.0",
     "react-dom": "16.0.0"
